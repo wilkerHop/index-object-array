@@ -1,0 +1,9 @@
+{
+  "printWidth": 120,
+  "trailingComma": "all",
+  "singleQuote": true,
+  "endOfLine": "lf",
+  "useTabs": false,
+  "tabWidth": 4,
+  "filepath": "src"
+}
