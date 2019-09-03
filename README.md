@@ -8,7 +8,7 @@ $ npm install --save index-object-array
 ```
 
 ## Usage
-```js
+```ts
 import indexer from 'index-object-array';
 const people = [
     { name: 'arthur', age: 8 },
@@ -33,4 +33,28 @@ indexer(people, person => person.name);
     }
 }
 */
+```
+
+## Use case
+Having to iterate over an array may cost too much performance when you are nested in loops
+```js
+people.reduce((acc, cur) => {
+    if (grownups.find(adult => cur.name == adult.name)) {
+        acc.push(people.find(person => person.name == cur.name));
+    }
+    return acc;
+}, []);
+```
+
+So, with an object indexed by the value you would have used in the find function, you can access the element only by its key
+```js
+const grownupsIndexed = indexer(grownups, adult => adult.name);
+const peopleIndexed = indexer(people, person => person.name);
+
+ people.reduce((acc, cur) => {
+    if (grownupsIndexed[cur.name]) {
+        acc.push(peopleIndexed[cur.name]);
+    }
+    return acc;
+}, []);
 ```
