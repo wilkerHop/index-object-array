@@ -61,7 +61,7 @@ So, with an object indexed by the value you would have used in the find function
 const grownupsIndexed = indexer(grownups, adult => adult.name);
 const peopleIndexed = indexer(people, person => person.name);
 
- people.reduce((acc, cur) => {
+people.reduce((acc, cur) => {
     if (grownupsIndexed[cur.name]) {
         acc.push(peopleIndexed[cur.name]);
     }
