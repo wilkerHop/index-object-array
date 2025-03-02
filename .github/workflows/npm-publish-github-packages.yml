@@ -16,8 +16,7 @@ jobs:
         with:
           node-version: 20
       - run: npm ci
-      - run: npm build
-      - run: npm run c
+      - run: npm run test
 
   publish-gpr:
     needs: build
