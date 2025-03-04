@@ -1,6 +1,6 @@
 {
     "name": "index-object-array",
-    "version": "0.1.0",
+    "version": "1.1.0",
     "description": "Creates an object by the given array, indexing it by an element value.",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
